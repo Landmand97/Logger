@@ -1,10 +1,24 @@
 #include "logger.h"
 
-
 log_levels log_level = INFO;
+
+bool printLogLevel(log_levels level);
+
+void log(log_levels level,const char *message, String s)
+{
+    if(printLogLevel(level)) {
+        printf(message, s);
+    }
+}
 
 void log(log_levels level, const char *message, const char t)
 {
+    if(printLogLevel(level)) {
+        printf(message, t);
+    }
+}
+
+bool printLogLevel(log_levels level) {
     if (level >= log_level)
     {
         switch (level)
@@ -24,10 +38,11 @@ void log(log_levels level, const char *message, const char t)
         default:
             break;
         }
+        return true;
     }
-
-    printf(message, t);
+    return false;
 }
+
 void set_log_level(log_levels level)
 {
     log_level = level;
