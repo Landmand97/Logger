@@ -1,20 +1,20 @@
 #include <Arduino.h>
 
-#ifndef logger_h
-#define logger_h
+#ifndef Logger_h
+#define Logger_h
 
-enum log_levels
+enum LogLevels
 {
-    INFO,
     DEBUG,
+    INFO,
     WARNING,
     ERROR
 };
 
 #endif
-void log(log_levels level, const char *message, String s);
-void log(log_levels level, const char *message, const char t);
+void log(LogLevels level, const char *message, String s);
+void log(LogLevels level, const char *message, const char t);
 
-void set_log_level(log_levels level);
+void setLogLevel(LogLevels level);
 
-String get_log_level();
+String getLogLevel();
