@@ -25,5 +25,9 @@ void setup()
 void function1(){
     // some code defining a value x to be logged...
     log(LogLevels::DEBUG,"x is: %d\n",x);
+
+    // some code checking for fatal error ...
+    log(LogLevels::ERROR, "No connection established\n",0);
+    errorLED();
 }
 ```
