@@ -73,7 +73,7 @@ void setLEDPin(int pin){
 }
 
 // can not return from this!!
-void errorLED(String errMessage)
+void errorLED(const char *errMessage)
 {
     while (1)
     {
@@ -81,6 +81,6 @@ void errorLED(String errMessage)
         delay(1000);
         digitalWrite(ledPin, LOW);
         delay(1000);
-        log(LogLevels::ERROR, errMessage + "\n", 0);
+        log(LogLevels::ERROR, errMessage, 0);
     }
 }
