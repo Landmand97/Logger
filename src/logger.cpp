@@ -1,8 +1,7 @@
 #include "Logger.h"
 
 LogLevels logLevel = INFO;
-
-bool printLogLevel(LogLevels level);
+int ledPin = 8; // commonly builtin LED pin
 
 void log(LogLevels level,const char *message, String s)
 {
@@ -66,14 +65,19 @@ String getLogLevel()
 }
 
 
+void setLedPin(int pin){
+    ledPin = pin;
+    pinMode(ledPin, OUTPUT);
+}
+
 // can not return from this!!
 void errorLED()
 {
     while (1)
     {
-        digitalWrite(built_in_led, HIGH);
+        digitalWrite(ledPin, HIGH);
         delay(1000);
-        digitalWrite(built_in_led, LOW);
+        digitalWrite(ledPin, LOW);
         delay(1000);
         log(LogLevels::ERROR, "Error with radio", 0);
     }

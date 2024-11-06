@@ -19,4 +19,6 @@ void setLogLevel(LogLevels level);
 
 String getLogLevel();
 
+void setLEDPin(int pin);
+
 void errorLED(); // can not return from this!!
