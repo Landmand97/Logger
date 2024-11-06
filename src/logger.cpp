@@ -3,6 +3,8 @@
 LogLevels logLevel = INFO;
 int ledPin = 8; // commonly builtin LED pin
 
+bool printLogLevel(LogLevels level);
+
 void log(LogLevels level,const char *message, String s)
 {
     if(printLogLevel(level)) {
