@@ -21,4 +21,4 @@ String getLogLevel();
 
 void setLEDPin(int pin);
 
-void errorLED(); // can not return from this!!
+void errorLED(const char *errMessage); // can not return from this!!
