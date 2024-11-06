@@ -18,3 +18,5 @@ void log(LogLevels level, const char *message, const char t);
 void setLogLevel(LogLevels level);
 
 String getLogLevel();
+
+void errorLED(); // can not return from this!!

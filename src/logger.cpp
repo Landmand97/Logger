@@ -64,3 +64,17 @@ String getLogLevel()
         return "UNKNOWN";
     }
 }
+
+
+// can not return from this!!
+void errorLED()
+{
+    while (1)
+    {
+        digitalWrite(built_in_led, HIGH);
+        delay(1000);
+        digitalWrite(built_in_led, LOW);
+        delay(1000);
+        log(LogLevels::ERROR, "Error with radio", 0);
+    }
+}
