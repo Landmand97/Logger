@@ -67,7 +67,7 @@ String getLogLevel()
 }
 
 
-void setLedPin(int pin){
+void setLEDPin(int pin){
     ledPin = pin;
     pinMode(ledPin, OUTPUT);
 }
